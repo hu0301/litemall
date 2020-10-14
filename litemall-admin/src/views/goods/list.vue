@@ -34,6 +34,9 @@
             <el-form-item label="品牌商ID">
               <span>{{ props.row.brandId }}</span>
             </el-form-item>
+            <el-form-item label="商品ID">
+              <span>{{ props.row.id }}</span>
+            </el-form-item>
           </el-form>
         </template>
       </el-table-column>
@@ -153,7 +156,7 @@ export default {
     getList() {
       this.listLoading = true
       listGoods(this.listQuery).then(response => {
-        this.list = response.data.data.items
+        this.list = response.data.data.list
         this.total = response.data.data.total
         this.listLoading = false
       }).catch(() => {
